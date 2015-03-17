@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "2.2.0"
+ruby "2.2.1"
 
 gem "multi_json"
 gem "oj"
@@ -28,4 +28,5 @@ group :test do
   gem "dotenv"
   gem "rack-test"
   gem "rspec"
+  gem "factory_girl"
 end
