@@ -4,6 +4,8 @@ rvm:
 sudo: false
 addons:
   postgresql: 9.3
+  code_climate:
+    repo_token: 1d9361e00622f40b5f60d5cf2549a6c1d1c2a87d61bb7ee230e6c16cad9f0d8a
 env:
   - DATABASE_URL=postgres://localhost/stash_api_test
 before_script:
