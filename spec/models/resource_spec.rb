@@ -15,4 +15,9 @@ describe Resource do
     expect{ resource.save }.to raise_error Sequel::ValidationFailed, /type is not present/
   end
 
+  it 'requires a collection_id' do
+    resource.collection_id = nil
+    expect{ resource.save }.to raise_error Sequel::ValidationFailed, /collection_id is not present/
+  end
+
 end

@@ -4,6 +4,7 @@ Sequel.migration do
       uuid         :uuid, default: Sequel.function(:uuid_generate_v4), primary_key: true
       String       :type, null: false
       String       :name, null: false
+      uuid         :collection_id, null: false
       timestamptz  :created_at, default: Sequel.function(:now), null: false
       timestamptz  :updated_at
     end
