@@ -1,9 +1,10 @@
 FactoryGirl.define do
+  sequence :resource_name do |n|
+    "Test Resource #{n}"
+  end
   factory :resource do
-    type 'Link'
+    name { generate :resource_name }
+    type Resource.types.first
     collection_id { SecureRandom.uuid }
-    sequence :name do |n|
-      "Test Resource #{n}"
-    end
   end
 end
