@@ -3,7 +3,7 @@ FactoryGirl.define do
     "Test Resource #{n}"
   end
   factory :resource do
-    name { generate :resource_name }
+    title { generate :resource_name }
     type Resource.types.first
     collection_id { SecureRandom.uuid }
   end

@@ -8,7 +8,7 @@ class Resource < Sequel::Model
 
   def validate
     super
-    validates_presence [:name, :type, :collection_id]
+    validates_presence [:type, :collection_id]
     validates_includes TYPES, :type, message: "is not an allowed type"
   end
 
