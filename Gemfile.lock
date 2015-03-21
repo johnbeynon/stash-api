@@ -131,6 +131,7 @@ DEPENDENCIES
   oj
   pg
   pliny (~> 0.6)
+  prmd
   pry
   pry-byebug
   puma (~> 2.10)

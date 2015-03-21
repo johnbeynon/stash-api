@@ -9,12 +9,12 @@ describe Endpoints::V1::Resources do
   end
 
   def schema_path
-    "./docs/schema.json"
+    "./schema/schema.json"
   end
 
-  describe 'GET /v1/resources' do
+  describe 'GET /resources' do
     it 'returns correct status code and conforms to schema' do
-      get '/resources'
+      get_v1_json '/resources'
       expect(last_response.status).to eq(200)
       assert_schema_conform
     end
@@ -41,7 +41,6 @@ describe Endpoints::V1::Resources do
   describe 'PATCH /v1/resources/:id' do
     it 'returns correct status code and conforms to schema' do
       resource = create :resource
-      header "Content-Type", "application/json"
       patch "/resources/#{resource.uuid}", MultiJson.encode({title: 'New Title'})
       expect(last_response.status).to eq(200)
       expect(Resource.last.title).to eq('New Title')

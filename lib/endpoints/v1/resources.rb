@@ -29,6 +29,13 @@ module Endpoints::V1
       end
     end
 
+    namespace '/collections' do  
+      get '/:collection_id/resources' do
+        collection = Collection.find(uuid: params[:collection_id])
+        respond_with collection.resources
+      end
+    end
+
     private
     
     def serializer

@@ -32,3 +32,7 @@ group :test do
   gem "factory_girl"
   gem "codeclimate-test-reporter", require: nil
 end
+
+group :development do
+  gem "prmd"
+end

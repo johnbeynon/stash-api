@@ -26,6 +26,8 @@ Pliny::Utils.require_glob("#{Config.root}/spec/support/**/*.rb")
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
+  config.include Requests::JsonHelpers
+
   config.before :suite do
     DatabaseCleaner.clean_with(:truncation)
     DatabaseCleaner.strategy = :transaction
