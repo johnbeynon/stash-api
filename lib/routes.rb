@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Routes = Rack::Builder.new do
 #  use Rollbar::Middleware::Sinatra
   use Pliny::Middleware::RescueErrors, raise: Config.raise_errors?
@@ -12,10 +14,17 @@ Routes = Rack::Builder.new do
   use Rack::MethodOverride
   use Rack::SSL if Config.force_ssl?
 
+  map '/sidekiq' do use Rack::Auth::Basic, "Protected Area" do |username, password|
+      username == ENV["SIDEKIQ_USER"] && password == ENV["SIDEKIQ_PASSWORD"]
+    end
+    run Sidekiq::Web
+  end
+
   use Pliny::Router do
-    mount Endpoints::V1::Collections
-    mount Endpoints::V1::Resources
-    # mount all endpoints here
+    version "1" do
+      mount Endpoints::V1::Collections
+      mount Endpoints::V1::Resources
+    end
   end
 
   # root app; but will also handle some defaults like 404

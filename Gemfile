@@ -18,6 +18,7 @@ gem "sinatra-contrib", require: ["sinatra/namespace", "sinatra/reloader"]
 gem "sinatra-router"
 gem "sucker_punch"
 gem "activesupport", require: 'active_support/all'
+gem "sidekiq"
 
 group :development, :test do
   gem "pry-byebug"
