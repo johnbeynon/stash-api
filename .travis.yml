@@ -8,6 +8,8 @@ addons:
     repo_token: 1d9361e00622f40b5f60d5cf2549a6c1d1c2a87d61bb7ee230e6c16cad9f0d8a
 env:
   - DATABASE_URL=postgres://localhost/stash_api_test
+  - VERSIONING_DEFAULT=1
+  - VERSIONING_APP_NAME=stash
 before_script:
   - date
   - psql -c 'create database stash_api_test;' -U postgres
