@@ -13,6 +13,7 @@ Routes = Rack::Builder.new do
   use Rack::SSL if Config.force_ssl?
 
   use Pliny::Router do
+    mount Endpoints::V1::Resources
     # mount all endpoints here
   end
 

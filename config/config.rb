@@ -29,6 +29,6 @@ module Config
   override :root,             File.expand_path("../../", __FILE__), string
   override :timeout,          10,    int
   override :force_ssl,        true,  bool
-  override :versioning,       false, bool
+  override :versioning,       true,  bool
   override :pretty_json,      false, bool
 end

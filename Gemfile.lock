@@ -121,6 +121,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
   codeclimate-test-reporter
   committee
   database_cleaner
