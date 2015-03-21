@@ -12,6 +12,8 @@ module Initializer
 
   def self.require_lib
     require! %w(
+      lib/workers/**/*
+      lib/callbacks/**/*
       lib/endpoints/base
       lib/endpoints/**/*
       lib/mediators/base

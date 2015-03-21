@@ -6,6 +6,8 @@ module Mediators::Link
 
     def call
       link = create_link
+      LinkCallbacks.perform_async(link.uuid)
+      link
     end
 
     private
