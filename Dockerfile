@@ -1,4 +1,12 @@
-FROM ruby:2.2.1-onbuild
+FROM ruby:2.2.1
 
-ONBUILD RUN bundle install
-ONBUILD EXPOSE 5000
+RUN mkdir /myapp
+
+# CACHE THE GEMS IN THE CONTAINER
+WORKDIR /tmp
+COPY Gemfile Gemfile
+COPY Gemfile.lock Gemfile.lock
+RUN bundle install 
+
+ADD . /myapp
+WORKDIR /myapp

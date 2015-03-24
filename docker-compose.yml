@@ -1,21 +1,18 @@
 db:
   image: postgres
   ports:
-    - "5432"
+    - "5432:5432"
+redis:
+  image: redis
+  ports:
+    - "6379"
 web:
   build: .
-  environment: 
-    RACK_ENV: development
-    DATABASE_URL: postgres://postgres@db/stash_api_development
-    TZ: UTC
-    FORCE_SSL: FALSE
-    VERSIONING_DEFAULT: 1
-    VERSIONING_APP_NAME: stash
-    RAISE_ERRORS: true
-  command: bundle exec puma --config config/puma.rb config.ru 
-  volumes:
-    - .:/app
+  command: bundle exec foreman start -e .env.docker
   ports: 
     - "5000:5000"
+  volumes:
+    - .:/myapp
   links:
     - db
+    - redis

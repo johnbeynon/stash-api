@@ -38,5 +38,6 @@ group :test do
 end
 
 group :development do
+  gem "foreman"
   gem "prmd"
 end

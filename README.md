@@ -9,7 +9,7 @@ This is the Stash-API. It's a WIP for the time being.
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 
-# Dockerized!
+# Dockerized for development
 
 I'm still learning this stuff, so far its...
 
