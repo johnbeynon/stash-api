@@ -1,8 +1,10 @@
 source "https://rubygems.org"
 ruby "2.2.1"
 
+gem "excon"
 gem "multi_json"
 gem "middleware"
+gem "nokogiri"
 gem "oj"
 gem "pg"
 gem "pliny", "~> 0.6"

@@ -7,3 +7,16 @@ Climate](https://codeclimate.com/github/johnbeynon/stash-api/badges/gpa.svg)](ht
 This is the Stash-API. It's a WIP for the time being.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+
+# Dockerized!
+
+I'm still learning this stuff, so far its...
+
+```
+docker-compose build
+docker-compose up
+docker-compose run web bin/setup
+```
+
+Access via `http://<docker-host-ip:5000`

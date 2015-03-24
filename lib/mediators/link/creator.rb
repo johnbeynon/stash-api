@@ -6,6 +6,13 @@ module Mediators::Link
 
     def call
       link = create_link
+      # Handle tagging
+      @args[:tags].each do |tag|
+        tag = Tag.find_or_create(name: tag, collection_id: @args[:collection_id])
+        link.add_tag(tag)
+      end
+
+      # Process callbacks
       LinkCallbacks.perform_async(link.uuid)
       link
     end
@@ -13,11 +20,11 @@ module Mediators::Link
     private
 
     def create_link
-      Resource.create @args
+      Resource.create @args.except(:tags)
     end
 
     def allowed_fields
-      [:title, :url, :excerpt, :response_code, :collection_id]
+      [:title, :url, :tags, :collection_id]
     end
   end
 end

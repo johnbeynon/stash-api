@@ -14,13 +14,14 @@ module Initializer
     require! %w(
       lib/workers/**/*
       lib/callbacks/**/*
+      lib/serializers/**/*
+      lib/services/**/*
       lib/endpoints/base
       lib/endpoints/**/*
       lib/mediators/base
       lib/mediators/**/*
       lib/routes
       lib/serializers/base
-      lib/serializers/**/*
     )
   end
 

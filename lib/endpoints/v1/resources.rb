@@ -13,8 +13,7 @@ module Endpoints::V1
       end
 
       get "/:id" do
-        resource = Resource.where(uuid: params[:id]).first
-        encode resource
+        respond_with Resource.find(uuid: params[:id])
       end
 
       patch "/:id" do
@@ -39,7 +38,7 @@ module Endpoints::V1
     private
     
     def serializer
-      Serializers::LinkSerializer.new(:default)
+      Serializers::Link.new(:default)
     end
 
   end
