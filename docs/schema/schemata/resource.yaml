@@ -69,6 +69,11 @@ links:
     type:
     - object
   title: Update
+- description: Resources in collection.
+  href: "/collections/{(%2Fschemata%2Fcollection%23%2Fdefinitions%2Fidentity)}/resources"
+  method: GET
+  rel: instances
+  title: List
 properties:
   created_at:
     "$ref": "/schemata/resource#/definitions/created_at"
