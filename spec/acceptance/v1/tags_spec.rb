@@ -9,47 +9,40 @@ describe Endpoints::V1::Tags do
   end
 
   def schema_path
-    "./schema/schema.json"
+    "./docs/schema/api.json"
   end
 
-  describe 'GET /v1/tags' do
+  describe 'POST /tags' do
     it 'returns correct status code and conforms to schema' do
-      get '/v1/tags'
-      assert_equal 200, last_response.status
+      post_v1_json '/tags', MultiJson.encode({name: 'New Tag'})
+      expect(last_response.status).to eq(201)
       assert_schema_conform
     end
   end
 
-  describe 'POST /v1/tags' do
+  describe 'GET /tags/:id' do
     it 'returns correct status code and conforms to schema' do
-      header "Content-Type", "application/json"
-      post '/v1/tags', MultiJson.encode({})
-      assert_equal 201, last_response.status
-      assert_schema_conform
-    end
-  end
-
-  describe 'GET /v1/tags/:id' do
-    it 'returns correct status code and conforms to schema' do
-      get "/v1/tags/123"
-      assert_equal 200, last_response.status
+      tag = create :tag
+      get_v1_json "/tags/#{tag.uuid}"
+      expect(last_response.status).to eq(200)
       assert_schema_conform
     end
   end
 
   describe 'PATCH /v1/tags/:id' do
     it 'returns correct status code and conforms to schema' do
-      header "Content-Type", "application/json"
-      patch '/v1/tags/123', MultiJson.encode({})
-      assert_equal 200, last_response.status
+      tag = create :tag
+      patch_v1_json "/tags/#{tag.uuid}", MultiJson.encode({name: 'New Name'})
+      expect(last_response.status).to eq(200)
       assert_schema_conform
     end
   end
 
-  describe 'DELETE /v1/tags/:id' do
+  describe 'DELETE /tags/:id' do
     it 'returns correct status code and conforms to schema' do
-      delete '/v1/tags/123'
-      assert_equal 200, last_response.status
+      tag = create :tag
+      delete_v1_json "/tags/#{tag.uuid}"
+      expect(last_response.status).to eq(200)
       assert_schema_conform
     end
   end

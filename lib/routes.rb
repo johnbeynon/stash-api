@@ -24,6 +24,7 @@ Routes = Rack::Builder.new do
     version "1" do
       mount Endpoints::V1::Collections
       mount Endpoints::V1::Resources
+      mount Endpoints::V1::Tags
     end
   end
 

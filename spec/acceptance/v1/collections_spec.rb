@@ -9,7 +9,7 @@ describe Endpoints::V1::Collections do
   end
 
   def schema_path
-    "./schema/schema.json"
+    "./docs/schema/api.json"
   end
 
   describe 'GET /v1/collections' do

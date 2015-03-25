@@ -3,6 +3,7 @@ class Collection < Sequel::Model
   plugin :validation_helpers
 
   one_to_many :resources
+  one_to_many :tags
 
   def validate
     super

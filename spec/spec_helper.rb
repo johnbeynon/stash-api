@@ -10,9 +10,6 @@ ENV["RACK_ENV"] = "test"
 require 'codeclimate-test-reporter'
 CodeClimate::TestReporter.start
 
-require 'codeclimate-test-reporter'
-CodeClimate::TestReporter.start
-
 require "bundler"
 Bundler.require(:default, :test)
 

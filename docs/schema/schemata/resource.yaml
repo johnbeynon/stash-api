@@ -25,6 +25,9 @@ definitions:
     description: when resource was updated
     example: '2012-01-01T12:00:00Z'
     format: date-time
+    type:
+      - "string"
+      - "null"
 description: FIXME
 links:
 - description: Create a new resource.

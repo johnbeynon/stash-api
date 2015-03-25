@@ -1,4 +1,4 @@
 require "spec_helper"
 
-describe Serializers::LinkSerializer do
+describe Serializers::Link do
 end

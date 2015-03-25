@@ -1,6 +1,6 @@
 ---
 "$schema": http://json-schema.org/draft-04/hyper-schema
-title: FIXME - Collection
+title: Collections
 definitions:
   id:
     description: unique identifier of collection
@@ -9,8 +9,8 @@ definitions:
     type:
     - string
   name:
-    description: Name of collection
-    example: Collection Name
+    description: Name of the collection
+    example: My Collection
     type:
     - string
   identity:
@@ -25,7 +25,10 @@ definitions:
     description: when collection was updated
     example: '2012-01-01T12:00:00Z'
     format: date-time
-description: FIXME
+    type:
+      - "string"
+      - "null"
+description: ""
 links:
 - description: Create a new collection.
   href: "/collections"

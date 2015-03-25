@@ -1,13 +1,6 @@
-module Endpoints
-  class V1::Tags < Base
-    namespace "/v1/tags" do
-      before do
-        content_type :json, charset: 'utf-8'
-      end
-
-      get do
-        encode []
-      end
+module Endpoints::V1
+  class Tags < Base
+    namespace "/tags" do
 
       post do
         status 201
@@ -25,7 +18,19 @@ module Endpoints
       delete "/:id" do
         encode Hash.new
       end
+    end
 
+    namespace '/collections' do  
+      get '/:collection_id/tags' do
+        collection = Collection.find(uuid: params[:collection_id])
+        respond_with collection.tags
+      end
+    end
+
+    private
+
+    def serializer
+      Serializers::Tag.new(:default)
     end
   end
 end

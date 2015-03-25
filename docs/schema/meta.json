@@ -1,0 +1,9 @@
+{
+ "description": "Stash API.",
+ "id": "stash-api",
+ "links": [{
+   "href": "https://api.stash.com",
+   "rel": "self"
+ }],
+ "title": "Stash API"
+}

@@ -9,7 +9,7 @@ describe Endpoints::V1::Resources do
   end
 
   def schema_path
-    "./schema/schema.json"
+    "./docs/schema/api.json"
   end
 
   describe 'GET /resources' do
@@ -23,7 +23,7 @@ describe Endpoints::V1::Resources do
   describe 'POST /v1/resources' do
     it 'returns correct status code and conforms to schema' do
       header "Content-Type", "application/json"
-      post '/resources', MultiJson.encode({title: 'A title', url: 'A url', collection_id: SecureRandom.uuid})
+      post '/resources', MultiJson.encode({title: 'A title', url: 'A url', collection_id: SecureRandom.uuid, tags: ["tag"]})
       expect(last_response.status).to eq(201)
       assert_schema_conform
     end
