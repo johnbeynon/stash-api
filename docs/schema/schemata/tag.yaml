@@ -1,6 +1,6 @@
 ---
 "$schema": http://json-schema.org/draft-04/hyper-schema
-title: FIXME - Tag
+title: Tag
 definitions:
   id:
     description: unique identifier of tag
@@ -26,7 +26,8 @@ definitions:
     example: '2012-01-01T12:00:00Z'
     format: date-time
     type:
-    - string
+      - "string"
+      - "null"
 description: FIXME
 links:
 - description: Create a new tag.
