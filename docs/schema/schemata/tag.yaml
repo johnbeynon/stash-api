@@ -15,19 +15,6 @@ definitions:
     example: A Tag
     type:
     - string
-  created_at:
-    description: when tag was created
-    example: '2012-01-01T12:00:00Z'
-    format: date-time
-    type:
-    - string
-  updated_at:
-    description: when tag was updated
-    example: '2012-01-01T12:00:00Z'
-    format: date-time
-    type:
-      - "string"
-      - "null"
 description: FIXME
 links:
 - description: Create a new tag.
@@ -64,14 +51,10 @@ links:
     - object
   title: Update
 properties:
-  created_at:
-    "$ref": "/schemata/tag#/definitions/created_at"
   id:
     "$ref": "/schemata/tag#/definitions/id"
   name:
     "$ref": "/schemata/tag#/definitions/name"
-  updated_at:
-    "$ref": "/schemata/tag#/definitions/updated_at"
 type:
 - object
 id: schemata/tag

@@ -28,6 +28,12 @@ definitions:
     type:
       - "string"
       - "null"
+  tags:
+    description: Tags
+    type:
+    - array
+    items: 
+      "$ref": "/schemata/tag"
 description: FIXME
 links:
 - description: Create a new resource.
@@ -72,6 +78,8 @@ properties:
     "$ref": "/schemata/resource#/definitions/title"
   updated_at:
     "$ref": "/schemata/resource#/definitions/updated_at"
+  tags:
+    "$ref": "/schemata/tag"
 type:
 - object
 id: schemata/resource

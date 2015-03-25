@@ -149,6 +149,15 @@
             "string",
             "null"
           ]
+        },
+        "tags": {
+          "description": "Tags",
+          "type": [
+            "array"
+          ],
+          "items": {
+            "$ref": "#/definitions/tag"
+          }
         }
       },
       "description": "FIXME",
@@ -215,6 +224,9 @@
         },
         "updated_at": {
           "$ref": "#/definitions/resource/definitions/updated_at"
+        },
+        "tags": {
+          "$ref": "#/definitions/tag"
         }
       },
       "type": [
@@ -223,7 +235,7 @@
     },
     "tag": {
       "$schema": "http://json-schema.org/draft-04/hyper-schema",
-      "title": "FIXME - Tag",
+      "title": "Tag",
       "definitions": {
         "id": {
           "description": "unique identifier of tag",
@@ -239,22 +251,6 @@
         "name": {
           "description": "Name of the tag",
           "example": "A Tag",
-          "type": [
-            "string"
-          ]
-        },
-        "created_at": {
-          "description": "when tag was created",
-          "example": "2012-01-01T12:00:00Z",
-          "format": "date-time",
-          "type": [
-            "string"
-          ]
-        },
-        "updated_at": {
-          "description": "when tag was updated",
-          "example": "2012-01-01T12:00:00Z",
-          "format": "date-time",
           "type": [
             "string"
           ]
@@ -313,17 +309,11 @@
         }
       ],
       "properties": {
-        "created_at": {
-          "$ref": "#/definitions/tag/definitions/created_at"
-        },
         "id": {
           "$ref": "#/definitions/tag/definitions/id"
         },
         "name": {
           "$ref": "#/definitions/tag/definitions/name"
-        },
-        "updated_at": {
-          "$ref": "#/definitions/tag/definitions/updated_at"
         }
       },
       "type": [

@@ -11,7 +11,7 @@ Preamble here
 | **created_at** | *date-time* | when collection was created | `"2012-01-01T12:00:00Z"` |
 | **id** | *uuid* | unique identifier of collection | `"01234567-89ab-cdef-0123-456789abcdef"` |
 | **name** | *string* | Name of the collection | `"My Collection"` |
-| **updated_at** | *date-time* | when collection was updated | `"2012-01-01T12:00:00Z"` |
+| **updated_at** | *nullable date-time* | when collection was updated | `"2012-01-01T12:00:00Z"` |
 ### Collections Create
 Create a new collection.
 
@@ -167,7 +167,9 @@ FIXME
 | **created_at** | *date-time* | when resource was created | `"2012-01-01T12:00:00Z"` |
 | **id** | *uuid* | unique identifier of resource | `"01234567-89ab-cdef-0123-456789abcdef"` |
 | **title** | *string* | title of resource | `"A title"` |
-| **updated_at** | *date-time* | when resource was updated | `"2012-01-01T12:00:00Z"` |
+| **updated_at** | *nullable date-time* | when resource was updated | `"2012-01-01T12:00:00Z"` |
+| **tags:id** | *uuid* | unique identifier of tag | `"01234567-89ab-cdef-0123-456789abcdef"` |
+| **tags:name** | *string* | Name of the tag | `"A Tag"` |
 ### Resource Create
 Create a new resource.
 
@@ -193,7 +195,11 @@ HTTP/1.1 201 Created
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
   "title": "A title",
-  "updated_at": "2012-01-01T12:00:00Z"
+  "updated_at": "2012-01-01T12:00:00Z",
+  "tags": {
+    "id": "01234567-89ab-cdef-0123-456789abcdef",
+    "name": "A Tag"
+  }
 }
 ```
 
@@ -222,7 +228,11 @@ HTTP/1.1 200 OK
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
   "title": "A title",
-  "updated_at": "2012-01-01T12:00:00Z"
+  "updated_at": "2012-01-01T12:00:00Z",
+  "tags": {
+    "id": "01234567-89ab-cdef-0123-456789abcdef",
+    "name": "A Tag"
+  }
 }
 ```
 
@@ -250,7 +260,11 @@ HTTP/1.1 200 OK
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
   "title": "A title",
-  "updated_at": "2012-01-01T12:00:00Z"
+  "updated_at": "2012-01-01T12:00:00Z",
+  "tags": {
+    "id": "01234567-89ab-cdef-0123-456789abcdef",
+    "name": "A Tag"
+  }
 }
 ```
 
@@ -279,7 +293,11 @@ HTTP/1.1 200 OK
     "created_at": "2012-01-01T12:00:00Z",
     "id": "01234567-89ab-cdef-0123-456789abcdef",
     "title": "A title",
-    "updated_at": "2012-01-01T12:00:00Z"
+    "updated_at": "2012-01-01T12:00:00Z",
+    "tags": {
+      "id": "01234567-89ab-cdef-0123-456789abcdef",
+      "name": "A Tag"
+    }
   }
 ]
 ```
@@ -309,7 +327,11 @@ HTTP/1.1 200 OK
   "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
   "title": "A title",
-  "updated_at": "2012-01-01T12:00:00Z"
+  "updated_at": "2012-01-01T12:00:00Z",
+  "tags": {
+    "id": "01234567-89ab-cdef-0123-456789abcdef",
+    "name": "A Tag"
+  }
 }
 ```
 
@@ -320,10 +342,8 @@ FIXME
 ### Attributes
 | Name | Type | Description | Example |
 | ------- | ------- | ------- | ------- |
-| **created_at** | *date-time* | when tag was created | `"2012-01-01T12:00:00Z"` |
 | **id** | *uuid* | unique identifier of tag | `"01234567-89ab-cdef-0123-456789abcdef"` |
 | **name** | *string* | Name of the tag | `"A Tag"` |
-| **updated_at** | *date-time* | when tag was updated | `"2012-01-01T12:00:00Z"` |
 ### Tag Create
 Create a new tag.
 
@@ -346,10 +366,8 @@ HTTP/1.1 201 Created
 ```
 ```json
 {
-  "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "name": "A Tag",
-  "updated_at": "2012-01-01T12:00:00Z"
+  "name": "A Tag"
 }
 ```
 
@@ -375,10 +393,8 @@ HTTP/1.1 200 OK
 ```
 ```json
 {
-  "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "name": "A Tag",
-  "updated_at": "2012-01-01T12:00:00Z"
+  "name": "A Tag"
 }
 ```
 
@@ -403,10 +419,8 @@ HTTP/1.1 200 OK
 ```
 ```json
 {
-  "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "name": "A Tag",
-  "updated_at": "2012-01-01T12:00:00Z"
+  "name": "A Tag"
 }
 ```
 
@@ -432,10 +446,8 @@ HTTP/1.1 200 OK
 ```json
 [
   {
-    "created_at": "2012-01-01T12:00:00Z",
     "id": "01234567-89ab-cdef-0123-456789abcdef",
-    "name": "A Tag",
-    "updated_at": "2012-01-01T12:00:00Z"
+    "name": "A Tag"
   }
 ]
 ```
@@ -462,10 +474,8 @@ HTTP/1.1 200 OK
 ```
 ```json
 {
-  "created_at": "2012-01-01T12:00:00Z",
   "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "name": "A Tag",
-  "updated_at": "2012-01-01T12:00:00Z"
+  "name": "A Tag"
 }
 ```
 
