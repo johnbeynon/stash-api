@@ -91,13 +91,6 @@
             ]
           },
           "title": "Update"
-        },
-        {
-          "description": "Resources in collection.",
-          "href": "/collections/{(%23%2Fdefinitions%2Fcollection%2Fdefinitions%2Fidentity)}/resources",
-          "method": "GET",
-          "rel": "instances",
-          "title": "Resources"
         }
       ],
       "properties": {
@@ -217,6 +210,13 @@
             ]
           },
           "title": "Update"
+        },
+        {
+          "description": "Resources in collection.",
+          "href": "/collections/{(%23%2Fdefinitions%2Fcollection%2Fdefinitions%2Fidentity)}/resources",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List"
         }
       ],
       "properties": {

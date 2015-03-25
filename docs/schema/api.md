@@ -157,36 +157,6 @@ HTTP/1.1 200 OK
 }
 ```
 
-### Collections Resources
-Resources in collection.
-
-```
-GET /collections/{collection_id}/resources
-```
-
-
-#### Curl Example
-```bash
-$ curl -n -X GET https://api.stash.com/collections/$COLLECTION_ID/resources
-
-```
-
-
-#### Response Example
-```
-HTTP/1.1 200 OK
-```
-```json
-[
-  {
-    "created_at": "2012-01-01T12:00:00Z",
-    "id": "01234567-89ab-cdef-0123-456789abcdef",
-    "name": "My Collection",
-    "updated_at": "2012-01-01T12:00:00Z"
-  }
-]
-```
-
 
 ## Resource
 FIXME
@@ -363,6 +333,40 @@ HTTP/1.1 200 OK
     "name": "A Tag"
   }
 }
+```
+
+### Resource List
+Resources in collection.
+
+```
+GET /collections/{collection_id}/resources
+```
+
+
+#### Curl Example
+```bash
+$ curl -n -X GET https://api.stash.com/collections/$COLLECTION_ID/resources
+
+```
+
+
+#### Response Example
+```
+HTTP/1.1 200 OK
+```
+```json
+[
+  {
+    "created_at": "2012-01-01T12:00:00Z",
+    "id": "01234567-89ab-cdef-0123-456789abcdef",
+    "title": "A title",
+    "updated_at": "2012-01-01T12:00:00Z",
+    "tags": {
+      "id": "01234567-89ab-cdef-0123-456789abcdef",
+      "name": "A Tag"
+    }
+  }
+]
 ```
 
 
