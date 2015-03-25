@@ -157,7 +157,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### Collections FooBah
+### Collections Resources
 Resources in collection.
 
 ```
@@ -177,12 +177,14 @@ $ curl -n -X GET https://api.stash.com/collections/$COLLECTION_ID/resources
 HTTP/1.1 200 OK
 ```
 ```json
-{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "name": "My Collection",
-  "updated_at": "2012-01-01T12:00:00Z"
-}
+[
+  {
+    "created_at": "2012-01-01T12:00:00Z",
+    "id": "01234567-89ab-cdef-0123-456789abcdef",
+    "name": "My Collection",
+    "updated_at": "2012-01-01T12:00:00Z"
+  }
+]
 ```
 
 
