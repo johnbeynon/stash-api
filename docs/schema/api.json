@@ -91,6 +91,20 @@
             ]
           },
           "title": "Update"
+        },
+        {
+          "description": "Resources in collection.",
+          "href": "/collections/{(%23%2Fdefinitions%2Fcollection%2Fdefinitions%2Fidentity)}/resources",
+          "method": "GET",
+          "rel": "self",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "FooBah"
         }
       ],
       "properties": {
