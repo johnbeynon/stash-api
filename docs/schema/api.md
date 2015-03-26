@@ -168,8 +168,7 @@ FIXME
 | **id** | *uuid* | unique identifier of resource | `"01234567-89ab-cdef-0123-456789abcdef"` |
 | **title** | *string* | title of resource | `"A title"` |
 | **updated_at** | *nullable date-time* | when resource was updated | `"2012-01-01T12:00:00Z"` |
-| **tags:id** | *uuid* | unique identifier of tag | `"01234567-89ab-cdef-0123-456789abcdef"` |
-| **tags:name** | *string* | Name of the tag | `"A Tag"` |
+| **tags** | *array* | Tags | `[nil]` |
 ### Resource Create
 Create a new resource.
 
@@ -196,10 +195,9 @@ HTTP/1.1 201 Created
   "id": "01234567-89ab-cdef-0123-456789abcdef",
   "title": "A title",
   "updated_at": "2012-01-01T12:00:00Z",
-  "tags": {
-    "id": "01234567-89ab-cdef-0123-456789abcdef",
-    "name": "A Tag"
-  }
+  "tags": [
+    null
+  ]
 }
 ```
 
@@ -229,10 +227,9 @@ HTTP/1.1 200 OK
   "id": "01234567-89ab-cdef-0123-456789abcdef",
   "title": "A title",
   "updated_at": "2012-01-01T12:00:00Z",
-  "tags": {
-    "id": "01234567-89ab-cdef-0123-456789abcdef",
-    "name": "A Tag"
-  }
+  "tags": [
+    null
+  ]
 }
 ```
 
@@ -261,10 +258,9 @@ HTTP/1.1 200 OK
   "id": "01234567-89ab-cdef-0123-456789abcdef",
   "title": "A title",
   "updated_at": "2012-01-01T12:00:00Z",
-  "tags": {
-    "id": "01234567-89ab-cdef-0123-456789abcdef",
-    "name": "A Tag"
-  }
+  "tags": [
+    null
+  ]
 }
 ```
 
@@ -294,10 +290,9 @@ HTTP/1.1 200 OK
     "id": "01234567-89ab-cdef-0123-456789abcdef",
     "title": "A title",
     "updated_at": "2012-01-01T12:00:00Z",
-    "tags": {
-      "id": "01234567-89ab-cdef-0123-456789abcdef",
-      "name": "A Tag"
-    }
+    "tags": [
+      null
+    ]
   }
 ]
 ```
@@ -328,14 +323,13 @@ HTTP/1.1 200 OK
   "id": "01234567-89ab-cdef-0123-456789abcdef",
   "title": "A title",
   "updated_at": "2012-01-01T12:00:00Z",
-  "tags": {
-    "id": "01234567-89ab-cdef-0123-456789abcdef",
-    "name": "A Tag"
-  }
+  "tags": [
+    null
+  ]
 }
 ```
 
-### Resource List
+### Resource Lists
 Resources in collection.
 
 ```
@@ -361,10 +355,9 @@ HTTP/1.1 200 OK
     "id": "01234567-89ab-cdef-0123-456789abcdef",
     "title": "A title",
     "updated_at": "2012-01-01T12:00:00Z",
-    "tags": {
-      "id": "01234567-89ab-cdef-0123-456789abcdef",
-      "name": "A Tag"
-    }
+    "tags": [
+      null
+    ]
   }
 ]
 ```
