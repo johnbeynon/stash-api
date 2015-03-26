@@ -10,6 +10,7 @@ Sequel.migration do
       uuid         :collection_id, null: false
       timestamptz  :created_at, default: Sequel.function(:now), null: false
       timestamptz  :updated_at
+      timestamptz  :deleted_at
     end
   end
 end

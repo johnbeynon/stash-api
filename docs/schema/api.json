@@ -50,6 +50,9 @@
           "rel": "create",
           "schema": {
             "properties": {
+              "name": {
+                "$ref": "#/definitions/collection/definitions/name"
+              }
             },
             "type": [
               "object"
@@ -85,6 +88,9 @@
           "rel": "update",
           "schema": {
             "properties": {
+              "name": {
+                "$ref": "#/definitions/collection/definitions/name"
+              }
             },
             "type": [
               "object"

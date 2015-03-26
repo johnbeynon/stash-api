@@ -24,7 +24,9 @@ module Endpoints::V1
       end
 
       delete "/:id" do
-        encode Hash.new
+        respond_with Mediators::Collection::Destroyer.new(
+          params[:id],
+        ).call
       end
       
     end

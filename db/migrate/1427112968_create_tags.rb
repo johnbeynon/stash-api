@@ -6,6 +6,7 @@ Sequel.migration do
       String       :name, null: false
       timestamptz  :created_at, default: Sequel.function(:now), null: false
       timestamptz  :updated_at
+      timestamptz  :deleted_at
     end
   end
 end

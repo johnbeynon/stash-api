@@ -5,6 +5,7 @@ class Resource < Sequel::Model
   plugin :timestamps
   plugin :validation_helpers
   plugin :single_table_inheritance, :type
+  plugin :paranoid, enable_default_scope: true
 
   many_to_many :tags, left_key: :resource_id, right_key: :tag_id, left_primary_key: :uuid
 

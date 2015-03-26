@@ -40,4 +40,6 @@ end
 group :development do
   gem "foreman"
   gem "prmd"
+  gem "github-markdown"
+  gem "launchy"
 end

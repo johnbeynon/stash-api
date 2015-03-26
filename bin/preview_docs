@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require 'tempfile'
+require 'github/markdown'
+require 'launchy'
+
+timestamp = Time.new.strftime("%Y%m%d%H%M%S")
+filename = "preview-#{timestamp}#{rand(10**10)}.html"
+preview_path = File.expand_path(filename, File.expand_path("tmp", nil))
+
+doc_content = File.read(File.expand_path('../../docs/schema/api.md', __FILE__))
+
+FileUtils.mkdir_p(File.dirname(preview_path))
+File.open(preview_path,'wb') { |f| f.write(GitHub::Markdown.render_gfm(doc_content))  }
+
+Launchy.open(preview_path)

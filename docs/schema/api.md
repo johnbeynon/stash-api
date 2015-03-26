@@ -19,11 +19,20 @@ Create a new collection.
 POST /collections
 ```
 
+#### Optional Parameters
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **name** | *string* | Name of the collection | `"My Collection"` |
+
 
 #### Curl Example
 ```bash
 $ curl -n -X POST https://api.stash.com/collections \
   -H "Content-Type: application/json" \
+ \
+  -d '{
+  "name": "My Collection"
+}'
 
 ```
 
@@ -135,11 +144,20 @@ Update an existing collection.
 PATCH /collections/{collection_id}
 ```
 
+#### Optional Parameters
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **name** | *string* | Name of the collection | `"My Collection"` |
+
 
 #### Curl Example
 ```bash
 $ curl -n -X PATCH https://api.stash.com/collections/$COLLECTION_ID \
   -H "Content-Type: application/json" \
+ \
+  -d '{
+  "name": "My Collection"
+}'
 
 ```
 
