@@ -2,11 +2,9 @@ module Endpoints::V1
   class Resources < Base
     namespace "/resources" do
 
-      get do
-        respond_with Resource.all
-      end
-
       post do
+        #raise request.body.read.inspect
+        #raise request_body.inspect
         respond_with Mediators::Link::Creator.new(
           request_body
         ).call, 201

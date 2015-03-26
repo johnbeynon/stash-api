@@ -12,18 +12,14 @@ describe Endpoints::V1::Resources do
     "./docs/schema/api.json"
   end
 
-  describe 'GET /resources' do
+  describe 'POST /resources' do
     it 'returns correct status code and conforms to schema' do
-      get_v1_json '/resources'
-      expect(last_response.status).to eq(200)
-      assert_schema_conform
-    end
-  end
-
-  describe 'POST /v1/resources' do
-    it 'returns correct status code and conforms to schema' do
-      header "Content-Type", "application/json"
-      post '/resources', MultiJson.encode({title: 'A title', url: 'A url', collection_id: SecureRandom.uuid, tags: ["tag"]})
+      post_v1_json '/resources', {
+        title: "A Title",
+        url: "A URL",
+        collection_id: SecureRandom.uuid,
+        tags: []
+      }
       expect(last_response.status).to eq(201)
       assert_schema_conform
     end
@@ -32,16 +28,20 @@ describe Endpoints::V1::Resources do
   describe 'GET /resources/:id' do
     it 'returns correct status code and conforms to schema' do
       resource = create :resource
-      get "/resources/#{resource.uuid}"
+      tag = create :tag
+      resource.add_tag tag
+      get_v1_json "/resources/#{resource.uuid}"
       expect(last_response.status).to eq(200)
       assert_schema_conform
     end
   end
 
-  describe 'PATCH /v1/resources/:id' do
+  describe 'PATCH /resources/:id' do
     it 'returns correct status code and conforms to schema' do
       resource = create :resource
-      patch "/resources/#{resource.uuid}", MultiJson.encode({title: 'New Title'})
+      patch_v1_json "/resources/#{resource.uuid}", {
+        title: 'New Title'
+      }
       expect(last_response.status).to eq(200)
       expect(Resource.last.title).to eq('New Title')
       assert_schema_conform
@@ -50,7 +50,7 @@ describe Endpoints::V1::Resources do
 
   describe 'DELETE /resources/:id' do
     it 'returns correct status code and conforms to schema' do
-      delete '/resources/123'
+      delete_v1_json '/resources/123'
       expect(last_response.status).to eq(200)
       assert_schema_conform
     end

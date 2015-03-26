@@ -156,7 +156,9 @@
             "array"
           ],
           "items": {
-            "$ref": "#/definitions/tag"
+            "type": [
+              "object"
+            ]
           }
         }
       },
@@ -216,7 +218,7 @@
           "href": "/collections/{(%23%2Fdefinitions%2Fcollection%2Fdefinitions%2Fidentity)}/resources",
           "method": "GET",
           "rel": "instances",
-          "title": "List"
+          "title": "Lists"
         }
       ],
       "properties": {
@@ -233,7 +235,7 @@
           "$ref": "#/definitions/resource/definitions/updated_at"
         },
         "tags": {
-          "$ref": "#/definitions/tag"
+          "$ref": "#/definitions/resource/definitions/tags"
         }
       },
       "type": [

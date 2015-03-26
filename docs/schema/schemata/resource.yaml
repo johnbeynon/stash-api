@@ -31,9 +31,10 @@ definitions:
   tags:
     description: Tags
     type:
-    - array
+      - array
     items: 
-      "$ref": "/schemata/tag"
+      type:
+        - object
 description: FIXME
 links:
 - description: Create a new resource.
@@ -73,7 +74,7 @@ links:
   href: "/collections/{(%2Fschemata%2Fcollection%23%2Fdefinitions%2Fidentity)}/resources"
   method: GET
   rel: instances
-  title: List
+  title: Lists
 properties:
   created_at:
     "$ref": "/schemata/resource#/definitions/created_at"
@@ -84,7 +85,7 @@ properties:
   updated_at:
     "$ref": "/schemata/resource#/definitions/updated_at"
   tags:
-    "$ref": "/schemata/tag"
+    "$ref": "/schemata/resource#/definitions/tags"
 type:
 - object
 id: schemata/resource
