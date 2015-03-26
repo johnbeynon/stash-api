@@ -4,6 +4,10 @@ describe Endpoints::V1::Resources do
   include Committee::Test::Methods
   include Rack::Test::Methods
 
+  before do
+    token_request
+  end
+
   def app
     Routes
   end

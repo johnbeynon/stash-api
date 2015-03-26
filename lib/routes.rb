@@ -10,6 +10,7 @@ Routes = Rack::Builder.new do
   use Pliny::Middleware::Versioning,
       default: Config.versioning_default,
       app_name: Config.versioning_app_name if Config.versioning?
+  use Middleware::TokenAuthenticator
   use Rack::Deflater
   use Rack::MethodOverride
   use Rack::SSL if Config.force_ssl?

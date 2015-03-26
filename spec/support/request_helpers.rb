@@ -9,6 +9,10 @@ module Requests
       end
     end
 
+    def token_request
+      allow_any_instance_of(Endpoints::V1::Base).to receive(:requires_token).and_return(nil)
+    end
+
     def method_missing(meth, *args, &block)
       if meth.to_s =~ /^([a-z]+)_v(\d)_json$/
         send_http($1.to_sym, $2.to_s, args[0], args[1] || {}, args[2] || {})

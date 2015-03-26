@@ -1,5 +1,6 @@
 module Endpoints::V1
   class Collections < Base
+
     namespace "/collections" do
 
       get do

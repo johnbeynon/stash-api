@@ -1,5 +1,6 @@
 module Endpoints::V1
   class Resources < Base
+
     namespace "/resources" do
 
       post do

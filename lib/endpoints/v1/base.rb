@@ -3,6 +3,11 @@ module Endpoints::V1
 
     before do
       content_type :json
+      requires_token
+    end
+
+    def requires_token
+      raise Pliny::Errors::Unauthorized unless request.env.has_key? "authed"
     end
 
     def respond_with(object, status=200, serializer=nil)

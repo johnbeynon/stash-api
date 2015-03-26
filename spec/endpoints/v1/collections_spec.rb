@@ -5,6 +5,7 @@ describe Endpoints::V1::Collections do
 
   before do
     @ticket = create :collection
+    token_request
   end
 
   describe "GET /collections" do
