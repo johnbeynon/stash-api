@@ -5,5 +5,18 @@
 	"scripts": {
 		"postdeploy": "bundle exec rake db:migrate\nbundle exec rake db:seed"
 	},
-	"addons": ["heroku-postgresql", "rediscloud"]
+	"addons": ["heroku-postgresql", "rediscloud"],
+  "env": {
+    "AUTH_TOKEN" : {
+      "description": "Auth token to protect API with",
+      "generator" : "secret"
+    },
+    "SIDEKIQ_USER" : {
+      "description" : "username to access Sidekiq UI"
+    },
+    "SIDEKIQ_PASSWORD" : {
+      "description" : "password to access Sidekiq UI",
+      "generator" : "secret"
+    }
+  }
 }
