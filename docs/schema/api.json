@@ -321,6 +321,13 @@
             ]
           },
           "title": "Update"
+        },
+        {
+          "description": "Tags in collection.",
+          "href": "/collections/{(%23%2Fdefinitions%2Fcollection%2Fdefinitions%2Fidentity)}/tags",
+          "method": "GET",
+          "rel": "instances",
+          "title": "Lists"
         }
       ],
       "properties": {

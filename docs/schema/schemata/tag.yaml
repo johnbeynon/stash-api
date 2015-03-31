@@ -50,6 +50,11 @@ links:
     type:
     - object
   title: Update
+- description: Tags in collection.
+  href: "/collections/{(%2Fschemata%2Fcollection%23%2Fdefinitions%2Fidentity)}/tags"
+  method: GET
+  rel: instances
+  title: Lists
 properties:
   id:
     "$ref": "/schemata/tag#/definitions/id"

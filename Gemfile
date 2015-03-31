@@ -25,6 +25,7 @@ gem "sidekiq"
 
 group :development, :test do
   gem "pry-byebug"
+  gem "heroics"
 end
 
 group :test do

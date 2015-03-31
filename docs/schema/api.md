@@ -532,4 +532,32 @@ HTTP/1.1 200 OK
 }
 ```
 
+### Tag Lists
+Tags in collection.
+
+```
+GET /collections/{collection_id}/tags
+```
+
+
+#### Curl Example
+```bash
+$ curl -n -X GET https://api.stash.com/collections/$COLLECTION_ID/tags
+
+```
+
+
+#### Response Example
+```
+HTTP/1.1 200 OK
+```
+```json
+[
+  {
+    "id": "01234567-89ab-cdef-0123-456789abcdef",
+    "name": "A Tag"
+  }
+]
+```
+
 
