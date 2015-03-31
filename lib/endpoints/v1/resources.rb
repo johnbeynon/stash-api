@@ -4,8 +4,6 @@ module Endpoints::V1
     namespace "/resources" do
 
       post do
-        #raise request.body.read.inspect
-        #raise request_body.inspect
         respond_with Mediators::Link::Creator.new(
           request_body
         ).call, 201
@@ -31,6 +29,14 @@ module Endpoints::V1
       get '/:collection_id/resources' do
         collection = Collection.find(uuid: params[:collection_id])
         respond_with collection.resources
+      end
+    end
+
+    namespace '/tags' do
+      get '/:tag_id/resources' do
+        @tag = Tag.find(uuid: params[:tag_id])
+        raise Pliny::Errors::NotFound if @tag.nil?
+        respond_with TagService.resources_in_tag(@tag)
       end
     end
 
