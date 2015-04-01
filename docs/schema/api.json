@@ -136,6 +136,20 @@
             "string"
           ]
         },
+        "url": {
+          "description": "URL of the resource",
+          "example": "http://www.somedomain.com",
+          "type": [
+            "string"
+          ]
+        },
+        "domain": {
+          "description": "Extracted domain from URL",
+          "example": "somedomain.com",
+          "type": [
+            "string"
+          ]
+        },
         "identity": {
           "$ref": "#/definitions/resource/definitions/id"
         },
@@ -236,6 +250,12 @@
         },
         "title": {
           "$ref": "#/definitions/resource/definitions/title"
+        },
+        "url": {
+          "$ref": "#/definitions/resource/definitions/url"
+        },
+        "domain": {
+          "$ref": "#/definitions/resource/definitions/domain"
         },
         "updated_at": {
           "$ref": "#/definitions/resource/definitions/updated_at"

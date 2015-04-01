@@ -1,3 +1,5 @@
+require 'uri'
+
 class Resource < Sequel::Model
 
   TYPES = %w{Link}
@@ -17,5 +19,10 @@ class Resource < Sequel::Model
 
   def self.types
     TYPES
+  end
+
+  def domain
+    _url = URI.parse(url)
+    _url.host.gsub('www.','')
   end
 end

@@ -6,5 +6,6 @@ FactoryGirl.define do
     title { generate :resource_name }
     type Resource.types.first
     collection_id { SecureRandom.uuid }
+    url "http://www.example.com"
   end
 end

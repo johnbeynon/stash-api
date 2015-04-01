@@ -20,7 +20,7 @@ describe Endpoints::V1::Resources do
     it 'returns correct status code and conforms to schema' do
       post_v1_json '/resources', {
         title: "A Title",
-        url: "A URL",
+        url: "http://www.example.com",
         collection_id: SecureRandom.uuid,
         tags: []
       }

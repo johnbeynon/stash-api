@@ -4,6 +4,7 @@ class Serializers::Link < Serializers::Base
       id:         arg.uuid,
       title:      arg.title,
       url:        arg.url,
+      domain:     arg.domain,
       created_at: arg.created_at.try(:iso8601),
       updated_at: arg.updated_at.try(:iso8601),
       tags:       tag_serialize(arg.tags, :default)

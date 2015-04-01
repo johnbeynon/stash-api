@@ -13,6 +13,16 @@ definitions:
     example: A title 
     type:
     - string
+  url:
+    description: URL of the resource
+    example: http://www.somedomain.com 
+    type:
+    - string
+  domain:
+    description: Extracted domain from URL
+    example: somedomain.com 
+    type:
+    - string
   identity:
     "$ref": "/schemata/resource#/definitions/id"
   created_at:
@@ -82,6 +92,10 @@ properties:
     "$ref": "/schemata/resource#/definitions/id"
   title:
     "$ref": "/schemata/resource#/definitions/title"
+  url:
+    "$ref": "/schemata/resource#/definitions/url"
+  domain:
+    "$ref": "/schemata/resource#/definitions/domain"
   updated_at:
     "$ref": "/schemata/resource#/definitions/updated_at"
   tags:
