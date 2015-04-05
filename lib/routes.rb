@@ -1,7 +1,7 @@
 require 'sidekiq/web'
 
 Routes = Rack::Builder.new do
-#  use Rollbar::Middleware::Sinatra
+  use Middleware::CorsExposeHeaders
   use Pliny::Middleware::RescueErrors, raise: Config.raise_errors?
   use Pliny::Middleware::CORS
   use Pliny::Middleware::RequestID
