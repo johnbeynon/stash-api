@@ -1,6 +1,7 @@
 module Endpoints
   # The base class for all Sinatra-based endpoints. Use sparingly.
   class Base < Sinatra::Base
+    register ::Support::Behaviours::ErrorHandling
     register Pliny::Extensions::Instruments
     register Sinatra::Namespace
 

@@ -15,6 +15,11 @@ definitions:
     example: A Tag
     type:
     - string
+  slug:
+    description: Generated slug of the tag
+    example: a-tag
+    type:
+    - string
 description: FIXME
 links:
 - description: Create a new tag.
@@ -60,6 +65,8 @@ properties:
     "$ref": "/schemata/tag#/definitions/id"
   name:
     "$ref": "/schemata/tag#/definitions/name"
+  slug:
+    "$ref": "/schemata/tag#/definitions/slug"
 type:
 - object
 id: schemata/tag

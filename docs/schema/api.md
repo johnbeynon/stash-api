@@ -411,6 +411,7 @@ FIXME
 | ------- | ------- | ------- | ------- |
 | **id** | *uuid* | unique identifier of tag | `"01234567-89ab-cdef-0123-456789abcdef"` |
 | **name** | *string* | Name of the tag | `"A Tag"` |
+| **slug** | *string* | Generated slug of the tag | `"a-tag"` |
 ### Tag Create
 Create a new tag.
 
@@ -434,7 +435,8 @@ HTTP/1.1 201 Created
 ```json
 {
   "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "name": "A Tag"
+  "name": "A Tag",
+  "slug": "a-tag"
 }
 ```
 
@@ -461,7 +463,8 @@ HTTP/1.1 200 OK
 ```json
 {
   "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "name": "A Tag"
+  "name": "A Tag",
+  "slug": "a-tag"
 }
 ```
 
@@ -487,7 +490,8 @@ HTTP/1.1 200 OK
 ```json
 {
   "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "name": "A Tag"
+  "name": "A Tag",
+  "slug": "a-tag"
 }
 ```
 
@@ -514,7 +518,8 @@ HTTP/1.1 200 OK
 [
   {
     "id": "01234567-89ab-cdef-0123-456789abcdef",
-    "name": "A Tag"
+    "name": "A Tag",
+    "slug": "a-tag"
   }
 ]
 ```
@@ -542,7 +547,8 @@ HTTP/1.1 200 OK
 ```json
 {
   "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "name": "A Tag"
+  "name": "A Tag",
+  "slug": "a-tag"
 }
 ```
 
@@ -569,7 +575,8 @@ HTTP/1.1 200 OK
 [
   {
     "id": "01234567-89ab-cdef-0123-456789abcdef",
-    "name": "A Tag"
+    "name": "A Tag",
+    "slug": "a-tag"
   }
 ]
 ```

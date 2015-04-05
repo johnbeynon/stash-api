@@ -14,6 +14,7 @@ module Initializer
     require! %w(
       lib/workers/**/*
       lib/callbacks/**/*
+      lib/support/**/*
       lib/middleware/**/*
       lib/serializers/**/*
       lib/services/**/*

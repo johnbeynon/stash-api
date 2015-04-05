@@ -1,6 +1,8 @@
 module Endpoints::V1
   class Resources < Base
 
+    UUID_PATTERN = /\A[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}\Z/
+
     namespace "/resources" do
 
       post do
@@ -27,9 +29,15 @@ module Endpoints::V1
 
     namespace '/collections' do  
       get '/:collection_id/resources' do
-        collection = Collection.find(uuid: params[:collection_id])
+        raise Pliny::Errors::NotFound unless UUID_PATTERN =~ collection_id
+        collection = Collection.find(uuid: collection_id)
+        raise Pliny::Errors::NotFound if collection.nil?
         respond_with collection.resources
       end
+    end
+
+    def collection_id
+      params[:collection_id]
     end
 
     namespace '/tags' do

@@ -289,6 +289,13 @@
           "type": [
             "string"
           ]
+        },
+        "slug": {
+          "description": "Generated slug of the tag",
+          "example": "a-tag",
+          "type": [
+            "string"
+          ]
         }
       },
       "description": "FIXME",
@@ -356,6 +363,9 @@
         },
         "name": {
           "$ref": "#/definitions/tag/definitions/name"
+        },
+        "slug": {
+          "$ref": "#/definitions/tag/definitions/slug"
         }
       },
       "type": [
