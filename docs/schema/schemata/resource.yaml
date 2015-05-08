@@ -21,6 +21,7 @@ definitions:
   domain:
     description: Extracted domain from URL
     example: somedomain.com 
+    readOnly: true
     type:
     - string
   identity:

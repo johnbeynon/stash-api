@@ -41,7 +41,7 @@
           ]
         }
       },
-      "description": "",
+      "description": "FIX ME",
       "links": [
         {
           "description": "Create a new collection.",
@@ -56,6 +56,9 @@
             },
             "type": [
               "object"
+            ],
+            "required": [
+              "name"
             ]
           },
           "title": "Create"
@@ -146,6 +149,7 @@
         "domain": {
           "description": "Extracted domain from URL",
           "example": "somedomain.com",
+          "readOnly": true,
           "type": [
             "string"
           ]

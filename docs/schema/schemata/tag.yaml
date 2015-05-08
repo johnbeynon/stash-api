@@ -30,6 +30,8 @@ links:
     properties: {}
     type:
     - object
+    required: 
+      - name
   title: Create
 - description: Delete an existing tag.
   href: "/tags/{(%2Fschemata%2Ftag%23%2Fdefinitions%2Fidentity)}"

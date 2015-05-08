@@ -11,7 +11,7 @@ $ curl -X GET https://api.stash.com/collections -H "Content-Type: application/js
 ```
 
 ## Collections
-
+FIX ME
 
 ### Attributes
 | Name | Type | Description | Example |
@@ -27,10 +27,11 @@ Create a new collection.
 POST /collections
 ```
 
-#### Optional Parameters
+#### Required Parameters
 | Name | Type | Description | Example |
 | ------- | ------- | ------- | ------- |
 | **name** | *string* | Name of the collection | `"My Collection"` |
+
 
 
 #### Curl Example

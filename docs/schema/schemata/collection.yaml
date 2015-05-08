@@ -28,7 +28,7 @@ definitions:
     type:
       - "string"
       - "null"
-description: ""
+description: "Collections are buckets for storing your resources in"
 links:
 - description: Create a new collection.
   href: "/collections"
@@ -40,6 +40,8 @@ links:
         "$ref": "/schemata/collection#/definitions/name"
     type:
     - object
+    required:
+      - name
   title: Create
 - description: Delete an existing collection.
   href: "/collections/{(%2Fschemata%2Fcollection%23%2Fdefinitions%2Fidentity)}"

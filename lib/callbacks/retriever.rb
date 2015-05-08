@@ -7,10 +7,13 @@ module Callbacks
     end
 
     def call(resource)
-      @resource = Resource[resource.id]
-      #SearchService.index(@ticket.id)
-      puts "Callbacks::Retriever"
-      @app.call @resource
+      title, first_para, images = UrlParser.parse(resource.url)
+      puts resource.title
+      resource.title = title
+      resource.description = first_para
+      resource.save
+      
+      @app.call resource
     end
 
   end
