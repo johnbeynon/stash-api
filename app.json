@@ -7,7 +7,7 @@
 	},
 	"addons": [
     "heroku-postgresql",
-    "rediscloud",
+    "heroku-redis",
     "rollbar",
     "logentries"
   ],
