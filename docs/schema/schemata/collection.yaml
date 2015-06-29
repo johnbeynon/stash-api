@@ -35,7 +35,7 @@ links:
   method: POST
   rel: create
   schema:
-    properties: 
+    properties:
       name:
         "$ref": "/schemata/collection#/definitions/name"
     type:

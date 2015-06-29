@@ -41,7 +41,7 @@
           ]
         }
       },
-      "description": "FIX ME",
+      "description": "Collections are buckets for storing your resources in",
       "links": [
         {
           "description": "Create a new collection.",
@@ -314,6 +314,9 @@
             },
             "type": [
               "object"
+            ],
+            "required": [
+              "name"
             ]
           },
           "title": "Create"

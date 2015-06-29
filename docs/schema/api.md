@@ -11,7 +11,7 @@ $ curl -X GET https://api.stash.com/collections -H "Content-Type: application/js
 ```
 
 ## Collections
-FIX ME
+Collections are buckets for storing your resources in
 
 ### Attributes
 | Name | Type | Description | Example |
