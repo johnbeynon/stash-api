@@ -7,6 +7,7 @@ module Mediators::Collection
 
     def call
       raise Pliny::Errors::NotFound unless @collection
+      raise Pliny::Errors::UnprocessableEntity, "Collection has resources" if @collection.resources.count > 0
       @collection.destroy
     end
   end
