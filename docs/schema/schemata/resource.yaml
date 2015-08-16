@@ -80,6 +80,10 @@ links:
     properties:
       url:
         "$ref": "/schemata/resource#/definitions/url"
+      title:
+        "$ref": "/schemata/resource#/definitions/title"
+      tags:
+        "$ref": "/schemata/resource#/definitions/tags"
     type:
     - object
     required:

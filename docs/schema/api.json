@@ -1,5 +1,8 @@
 {
-  "$schema": "http://json-schema.org/draft-04/hyper-schema",
+  "$schema": "http://interagent.github.io/interagent-hyper-schema",
+  "type": [
+    "object"
+  ],
   "definitions": {
     "collection": {
       "$schema": "http://json-schema.org/draft-04/hyper-schema",
@@ -232,6 +235,12 @@
             "properties": {
               "url": {
                 "$ref": "#/definitions/resource/definitions/url"
+              },
+              "title": {
+                "$ref": "#/definitions/resource/definitions/title"
+              },
+              "tags": {
+                "$ref": "#/definitions/resource/definitions/tags"
               }
             },
             "type": [
@@ -390,9 +399,6 @@
       "$ref": "#/definitions/tag"
     }
   },
-  "type": [
-    "object"
-  ],
   "description": "Stash API.",
   "id": "stash-api",
   "links": [
