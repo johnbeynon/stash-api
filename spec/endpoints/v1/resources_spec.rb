@@ -21,4 +21,19 @@ describe Endpoints::V1::Resources do
       expect(last_response.status).to eq(404)
     end
   end
+
+  describe "POST /collection/:collection_id/resources" do
+
+    before do
+      @collection = create :collection
+      token_request
+    end
+
+    it "succeeds with just a URL" do
+      post_v1_json "/collections/#{@collection.uuid}/add", {
+        url: 'http://www.example.com'
+      }
+      expect(last_response.status).to eq(201)
+    end
+  end
 end

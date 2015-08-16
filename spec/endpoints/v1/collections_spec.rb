@@ -4,7 +4,7 @@ describe Endpoints::V1::Collections do
   include Rack::Test::Methods
 
   before do
-    @ticket = create :collection
+    @collection = create :collection
     token_request
   end
 
@@ -18,7 +18,7 @@ describe Endpoints::V1::Collections do
 
   describe "GET /collections/:id" do
     it "gets a single collection" do
-      get_v1_json "/collections/#{@ticket.uuid}"
+      get_v1_json "/collections/#{@collection.uuid}"
       expect(last_response.status).to eq(200)
     end
   end
@@ -31,15 +31,14 @@ describe Endpoints::V1::Collections do
       expect(last_response.status).to eq(201)
     end
   end
-  
+
   describe "PATCH /collections/:id" do
     it "updates name" do
-      patch_v1_json "/collections/#{@ticket.uuid}", {
+      patch_v1_json "/collections/#{@collection.uuid}", {
         name: 'Updated Collection'
       }
       expect(last_response.status).to eq(200)
     end
   end
-
 
 end

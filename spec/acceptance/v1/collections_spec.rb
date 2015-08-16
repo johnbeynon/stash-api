@@ -16,7 +16,7 @@ describe Endpoints::V1::Collections do
     "./docs/schema/api.json"
   end
 
-  describe 'GET /v1/collections' do
+  describe 'GET /collections' do
     it 'returns correct status code and conforms to schema' do
       get_v1_json '/collections'
       expect(last_response.status).to eq(200)
@@ -24,7 +24,7 @@ describe Endpoints::V1::Collections do
     end
   end
 
-  describe 'POST /v1/collections' do
+  describe 'POST /collections' do
     it 'returns correct status code and conforms to schema' do
       post '/collections', MultiJson.encode({name: 'A Collection'})
       expect(last_response.status).to eq(201)
