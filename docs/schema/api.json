@@ -189,20 +189,6 @@
       "description": "FIXME",
       "links": [
         {
-          "description": "Create a new resource.",
-          "href": "/resources",
-          "method": "POST",
-          "rel": "create",
-          "schema": {
-            "properties": {
-            },
-            "type": [
-              "object"
-            ]
-          },
-          "title": "Create"
-        },
-        {
           "description": "Delete an existing resource.",
           "href": "/resources/{(%23%2Fdefinitions%2Fresource%2Fdefinitions%2Fidentity)}",
           "method": "DELETE",
@@ -215,13 +201,6 @@
           "method": "GET",
           "rel": "self",
           "title": "Info"
-        },
-        {
-          "description": "List existing resources.",
-          "href": "/resources",
-          "method": "GET",
-          "rel": "instances",
-          "title": "List"
         },
         {
           "description": "Update an existing resource.",
@@ -238,11 +217,31 @@
           "title": "Update"
         },
         {
-          "description": "Resources in collection.",
+          "description": "List resources in a collection.",
           "href": "/collections/{(%23%2Fdefinitions%2Fcollection%2Fdefinitions%2Fidentity)}/resources",
           "method": "GET",
           "rel": "instances",
-          "title": "Lists"
+          "title": "Collection resources"
+        },
+        {
+          "description": "Add a new resource in a collection.",
+          "href": "/collections/{(%23%2Fdefinitions%2Fcollection%2Fdefinitions%2Fidentity)}/add",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "properties": {
+              "url": {
+                "$ref": "#/definitions/resource/definitions/url"
+              }
+            },
+            "type": [
+              "object"
+            ],
+            "required": [
+              "url"
+            ]
+          },
+          "title": "Create resource"
         }
       ],
       "properties": {

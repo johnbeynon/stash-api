@@ -10,17 +10,17 @@ definitions:
     - string
   title:
     description: title of resource
-    example: A title 
+    example: A title
     type:
     - string
   url:
     description: URL of the resource
-    example: http://www.somedomain.com 
+    example: http://www.somedomain.com
     type:
     - string
   domain:
     description: Extracted domain from URL
-    example: somedomain.com 
+    example: somedomain.com
     readOnly: true
     type:
     - string
@@ -43,20 +43,11 @@ definitions:
     description: Tags
     type:
       - array
-    items: 
+    items:
       type:
         - object
 description: FIXME
 links:
-- description: Create a new resource.
-  href: "/resources"
-  method: POST
-  rel: create
-  schema:
-    properties: {}
-    type:
-    - object
-  title: Create
 - description: Delete an existing resource.
   href: "/resources/{(%2Fschemata%2Fresource%23%2Fdefinitions%2Fidentity)}"
   method: DELETE
@@ -67,11 +58,6 @@ links:
   method: GET
   rel: self
   title: Info
-- description: List existing resources.
-  href: "/resources"
-  method: GET
-  rel: instances
-  title: List
 - description: Update an existing resource.
   href: "/resources/{(%2Fschemata%2Fresource%23%2Fdefinitions%2Fidentity)}"
   method: PATCH
@@ -81,11 +67,24 @@ links:
     type:
     - object
   title: Update
-- description: Resources in collection.
+- description: List resources in a collection.
   href: "/collections/{(%2Fschemata%2Fcollection%23%2Fdefinitions%2Fidentity)}/resources"
   method: GET
   rel: instances
-  title: Lists
+  title: "Collection resources"
+- description: Add a new resource in a collection.
+  href: "/collections/{(%2Fschemata%2Fcollection%23%2Fdefinitions%2Fidentity)}/add"
+  method: POST
+  rel: create
+  schema:
+    properties:
+      url:
+        "$ref": "/schemata/resource#/definitions/url"
+    type:
+    - object
+    required:
+      - url
+  title: Create resource
 properties:
   created_at:
     "$ref": "/schemata/resource#/definitions/created_at"

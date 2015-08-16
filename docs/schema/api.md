@@ -198,40 +198,6 @@ FIXME
 | **domain** | *string* | Extracted domain from URL | `"somedomain.com"` |
 | **updated_at** | *nullable date-time* | when resource was updated | `"2012-01-01T12:00:00Z"` |
 | **tags** | *array* | Tags | `[nil]` |
-### Resource Create
-Create a new resource.
-
-```
-POST /resources
-```
-
-
-#### Curl Example
-```bash
-$ curl -n -X POST https://api.stash.com/resources \
-  -H "Content-Type: application/json" \
-
-```
-
-
-#### Response Example
-```
-HTTP/1.1 201 Created
-```
-```json
-{
-  "created_at": "2012-01-01T12:00:00Z",
-  "id": "01234567-89ab-cdef-0123-456789abcdef",
-  "title": "A title",
-  "url": "http://www.somedomain.com",
-  "domain": "somedomain.com",
-  "updated_at": "2012-01-01T12:00:00Z",
-  "tags": [
-    null
-  ]
-}
-```
-
 ### Resource Delete
 Delete an existing resource.
 
@@ -299,41 +265,6 @@ HTTP/1.1 200 OK
 }
 ```
 
-### Resource List
-List existing resources.
-
-```
-GET /resources
-```
-
-
-#### Curl Example
-```bash
-$ curl -n -X GET https://api.stash.com/resources
-
-```
-
-
-#### Response Example
-```
-HTTP/1.1 200 OK
-```
-```json
-[
-  {
-    "created_at": "2012-01-01T12:00:00Z",
-    "id": "01234567-89ab-cdef-0123-456789abcdef",
-    "title": "A title",
-    "url": "http://www.somedomain.com",
-    "domain": "somedomain.com",
-    "updated_at": "2012-01-01T12:00:00Z",
-    "tags": [
-      null
-    ]
-  }
-]
-```
-
 ### Resource Update
 Update an existing resource.
 
@@ -368,8 +299,8 @@ HTTP/1.1 200 OK
 }
 ```
 
-### Resource Lists
-Resources in collection.
+### Resource Collection resources
+List resources in a collection.
 
 ```
 GET /collections/{collection_id}/resources
@@ -401,6 +332,50 @@ HTTP/1.1 200 OK
     ]
   }
 ]
+```
+
+### Resource Create resource
+Add a new resource in a collection.
+
+```
+POST /collections/{collection_id}/add
+```
+
+#### Required Parameters
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **url** | *string* | URL of the resource | `"http://www.somedomain.com"` |
+
+
+
+#### Curl Example
+```bash
+$ curl -n -X POST https://api.stash.com/collections/$COLLECTION_ID/add \
+  -H "Content-Type: application/json" \
+ \
+  -d '{
+  "url": "http://www.somedomain.com"
+}'
+
+```
+
+
+#### Response Example
+```
+HTTP/1.1 201 Created
+```
+```json
+{
+  "created_at": "2012-01-01T12:00:00Z",
+  "id": "01234567-89ab-cdef-0123-456789abcdef",
+  "title": "A title",
+  "url": "http://www.somedomain.com",
+  "domain": "somedomain.com",
+  "updated_at": "2012-01-01T12:00:00Z",
+  "tags": [
+    null
+  ]
+}
 ```
 
 

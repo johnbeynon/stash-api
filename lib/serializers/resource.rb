@@ -1,4 +1,4 @@
-class Serializers::Link < Serializers::Base
+class Serializers::Resource < Serializers::Base
   structure(:default) do |arg|
     {
       id:         arg.uuid,

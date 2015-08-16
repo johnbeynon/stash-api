@@ -5,18 +5,18 @@ module Endpoints::V1
 
     namespace "/resources" do
 
-      post do
-        respond_with Mediators::Link::Creator.new(
-          request_body
-        ).call, 201
-      end
+      # post do
+      #   respond_with Mediators::Link::Creator.new(
+      #     request_body
+      #   ).call, 201
+      # end
 
       get "/:id" do
         respond_with Resource.find(uuid: params[:id])
       end
 
       patch "/:id" do
-        respond_with Mediators::Link::Updater.new(
+        respond_with Mediators::Resource::Updater.new(
           params[:id],
           request_body,
         ).call
@@ -27,7 +27,15 @@ module Endpoints::V1
       end
     end
 
-    namespace '/collections' do  
+    namespace '/collections' do
+
+      post "/:collection_id/add" do
+        respond_with Mediators::Resource::Creator.new(
+          collection_id,
+          request_body
+        ).call, 201
+      end
+
       get '/:collection_id/resources' do
         raise Pliny::Errors::NotFound unless UUID_PATTERN =~ collection_id
         collection = Collection.find(uuid: collection_id)
@@ -49,9 +57,9 @@ module Endpoints::V1
     end
 
     private
-    
+
     def serializer
-      Serializers::Link.new(:default)
+      Serializers::Resource.new(:default)
     end
 
   end

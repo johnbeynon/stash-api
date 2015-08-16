@@ -29,7 +29,7 @@ module Endpoints::V1
           params[:id],
         ).call
       end
-      
+
     end
 
     private

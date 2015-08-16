@@ -1,4 +1,4 @@
-module Mediators::Link
+module Mediators::Resource
   class Updater < Mediators::Base
 
     def initialize(id, args)

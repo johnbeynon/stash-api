@@ -16,12 +16,12 @@ describe Endpoints::V1::Resources do
     "./docs/schema/api.json"
   end
 
-  describe 'POST /resources' do
+  describe 'POST /collections/:collection_id/add' do
     it 'returns correct status code and conforms to schema' do
-      post_v1_json '/resources', {
+      collection = create :collection
+      post_v1_json "/collections/#{collection.uuid}/add", {
         title: "A Title",
         url: "http://www.example.com",
-        collection_id: SecureRandom.uuid,
         tags: []
       }
       expect(last_response.status).to eq(201)
