@@ -2,6 +2,7 @@
 	"name": "Stash API",
 	"description": "An open source project for bookmarking.",
 	"repository": "https://github.com/johnbeynon/stash-api",
+	"image": "hone/ruby:util",
 	"scripts": {
 		"postdeploy": "bundle exec rake db:migrate\nbundle exec rake db:seed"
 	},

@@ -14,18 +14,27 @@ collections of links which can be further categorised with tags.
 
 [API Docs](/docs/schema/api.md)
 
+# Development
+
+* Redis
+
+
 # Deployment
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 # Dockerized for development
 
-I'm still learning this stuff, so far its...
+Make sure you have an updated version of ![Heroku Toolbelt](https://toolbelt.heroku.com/), a working ![Docker installation\(https://docs.docker.com/installation/) and the heroku-docker plugin installed:
 
 ```
-docker-compose build
-docker-compose up
-docker-compose run web bin/setup
+$ heroku plugins:install heroku-docker
 ```
 
-Access endpoints via `http://<docker-host-ip>:5000`
+and start the application with:
+
+```
+$ docker-compose up web worker
+```
+
+Access endpoints via `http://<docker-host-ip>:8080`

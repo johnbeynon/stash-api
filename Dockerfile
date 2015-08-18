@@ -1,1 +1,1 @@
-FROM heroku/cedar:14
+FROM hone/ruby:util
