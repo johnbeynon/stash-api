@@ -12,7 +12,7 @@ GEM
     byebug (8.2.2)
     codeclimate-test-reporter (0.4.8)
       simplecov (>= 0.7.1, < 1.0.0)
-    coderay (1.1.0)
+    coderay (1.1.1)
     committee (1.13.0)
       json_schema (~> 0.6, >= 0.6.1)
       rack (~> 1.5)
@@ -23,7 +23,7 @@ GEM
     docile (1.1.5)
     dotenv (2.1.0)
     erubis (2.7.0)
-    excon (0.45.4)
+    excon (0.46.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     foreman (0.78.0)
@@ -50,17 +50,17 @@ GEM
     netrc (0.11.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
-    oj (2.14.4)
+    oj (2.14.5)
     pg (0.18.4)
-    pliny (0.15.0)
+    pliny (0.15.1)
       activesupport (~> 4.1, >= 4.1.0)
       http_accept (~> 0.1, >= 0.1.5)
       multi_json (~> 1.9, >= 1.9.3)
-      prmd (~> 0.7.0)
+      prmd (~> 0.11, >= 0.11.4)
       sinatra (~> 1.4, >= 1.4.5)
       sinatra-router (~> 0.2, >= 0.2.3)
       thor (~> 0.19, >= 0.19.1)
-    prmd (0.7.4)
+    prmd (0.11.4)
       erubis (~> 2.7)
       json_schema (~> 0.3, >= 0.3.1)
     pry (0.10.3)
@@ -70,7 +70,7 @@ GEM
     pry-byebug (3.3.0)
       byebug (~> 8.0)
       pry (~> 0.10)
-    puma (2.16.0)
+    puma (3.0.2)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -80,13 +80,13 @@ GEM
       rack (>= 1.0)
     rake (10.5.0)
     redis (3.2.2)
-    rollbar (2.7.1)
+    rollbar (2.8.0)
       multi_json
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
       rspec-mocks (~> 3.4.0)
-    rspec-core (3.4.2)
+    rspec-core (3.4.3)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -124,7 +124,7 @@ GEM
     sinatra-router (0.2.3)
       sinatra (~> 1.4)
     slop (3.6.0)
-    sucker_punch (2.0.0)
+    sucker_punch (2.0.1)
       concurrent-ruby (~> 1.0.0)
     thor (0.19.1)
     thread_safe (0.3.5)
@@ -156,7 +156,7 @@ DEPENDENCIES
   prmd
   pry
   pry-byebug
-  puma (~> 2.10)
+  puma
   rack-ssl
   rack-test
   rake
@@ -172,4 +172,4 @@ DEPENDENCIES
   sucker_punch
 
 BUNDLED WITH
-   1.10.3
+   1.11.2
