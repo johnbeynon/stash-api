@@ -5,6 +5,14 @@ describe Tag do
 
   it_behaves_like 'a timestamped model'
 
+  it 'has resources' do
+    expect(tag.respond_to? :resources).to be true
+  end
+
+  it 'has collection' do
+    expect(tag.respond_to? :collection).to be true
+  end
+
   it 'requires a name' do
     tag.name = nil
     expect{ tag.save }.to raise_error Sequel::ValidationFailed, /name is not present/

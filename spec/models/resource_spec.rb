@@ -5,6 +5,10 @@ describe Resource do
 
   it_behaves_like 'a timestamped model'
 
+  it 'has tags' do
+    expect(resource.respond_to? :tags).to be true
+  end
+
   it 'requires a type' do
     resource.type = nil
     expect{ resource.save }.to raise_error Sequel::ValidationFailed, /type is not an allowed type/
