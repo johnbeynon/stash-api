@@ -16,10 +16,10 @@ describe Endpoints::V1::Resources do
     "./docs/schema/api.json"
   end
 
-  describe 'POST /collections/:collection_id/add' do
+  describe 'POST /collections/:collection_id/resources' do
     it 'returns correct status code and conforms to schema' do
       collection = create :collection
-      post_v1_json "/collections/#{collection.uuid}/add", {
+      post_v1_json "/collections/#{collection.uuid}/resources", {
         title: "A Title",
         url: "http://www.example.com",
         tags: []

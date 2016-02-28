@@ -3,6 +3,10 @@ require "spec_helper"
 describe Endpoints::V1::Resources do
   include Rack::Test::Methods
 
+  describe "GET /tags/:tag_id/resources" do
+
+  end
+
   describe "GET /collections/:collection_id/resources" do
 
     before do
@@ -30,7 +34,7 @@ describe Endpoints::V1::Resources do
     end
 
     it "succeeds with just a URL" do
-      post_v1_json "/collections/#{@collection.uuid}/add", {
+      post_v1_json "/collections/#{@collection.uuid}/resources", {
         url: 'http://www.example.com'
       }
       expect(last_response.status).to eq(201)

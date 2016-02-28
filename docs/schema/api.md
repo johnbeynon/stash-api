@@ -43,11 +43,10 @@ POST /collections
 
 ```bash
 $ curl -n -X POST https://api.stash.com/collections \
-  -H "Content-Type: application/json" \
- \
   -d '{
   "name": "My Collection"
-}'
+}' \
+  -H "Content-Type: application/json"
 ```
 
 
@@ -79,7 +78,7 @@ DELETE /collections/{collection_id}
 
 ```bash
 $ curl -n -X DELETE https://api.stash.com/collections/$COLLECTION_ID \
-  -H "Content-Type: application/json" \
+  -H "Content-Type: application/json"
 ```
 
 
@@ -181,11 +180,10 @@ PATCH /collections/{collection_id}
 
 ```bash
 $ curl -n -X PATCH https://api.stash.com/collections/$COLLECTION_ID \
-  -H "Content-Type: application/json" \
- \
   -d '{
   "name": "My Collection"
-}'
+}' \
+  -H "Content-Type: application/json"
 ```
 
 
@@ -214,12 +212,12 @@ FIXME
 | Name | Type | Description | Example |
 | ------- | ------- | ------- | ------- |
 | **created_at** | *date-time* | when resource was created | `"2012-01-01T12:00:00Z"` |
-| **id** | *uuid* | unique identifier of resource | `"01234567-89ab-cdef-0123-456789abcdef"` |
-| **title** | *string* | title of resource | `"A title"` |
-| **url** | *string* | URL of the resource | `"http://www.somedomain.com"` |
 | **domain** | *string* | Extracted domain from URL | `"somedomain.com"` |
+| **id** | *uuid* | unique identifier of resource | `"01234567-89ab-cdef-0123-456789abcdef"` |
+| **tags** | *array* | Tags | `[null]` |
+| **title** | *string* | title of resource | `"A title"` |
 | **updated_at** | *nullable date-time* | when resource was updated | `"2012-01-01T12:00:00Z"` |
-| **tags** | *array* | Tags | `[nil]` |
+| **url** | *string* | URL of the resource | `"http://www.somedomain.com"` |
 
 ### Resource Delete
 
@@ -234,7 +232,7 @@ DELETE /resources/{resource_id}
 
 ```bash
 $ curl -n -X DELETE https://api.stash.com/resources/$RESOURCE_ID \
-  -H "Content-Type: application/json" \
+  -H "Content-Type: application/json"
 ```
 
 
@@ -307,10 +305,9 @@ PATCH /resources/{resource_id}
 
 ```bash
 $ curl -n -X PATCH https://api.stash.com/resources/$RESOURCE_ID \
-  -H "Content-Type: application/json" \
- \
   -d '{
-}'
+}' \
+  -H "Content-Type: application/json"
 ```
 
 
@@ -377,7 +374,7 @@ HTTP/1.1 200 OK
 Add a new resource in a collection.
 
 ```
-POST /collections/{collection_id}/add
+POST /collections/{collection_id}/resources
 ```
 
 #### Required Parameters
@@ -391,23 +388,22 @@ POST /collections/{collection_id}/add
 
 | Name | Type | Description | Example |
 | ------- | ------- | ------- | ------- |
+| **tags** | *array* | Tags | `[null]` |
 | **title** | *string* | title of resource | `"A title"` |
-| **tags** | *array* | Tags | `[nil]` |
 
 
 #### Curl Example
 
 ```bash
-$ curl -n -X POST https://api.stash.com/collections/$COLLECTION_ID/add \
-  -H "Content-Type: application/json" \
- \
+$ curl -n -X POST https://api.stash.com/collections/$COLLECTION_ID/resources \
   -d '{
   "url": "http://www.somedomain.com",
   "title": "A title",
   "tags": [
     null
   ]
-}'
+}' \
+  -H "Content-Type: application/json"
 ```
 
 
@@ -457,10 +453,9 @@ POST /tags
 
 ```bash
 $ curl -n -X POST https://api.stash.com/tags \
-  -H "Content-Type: application/json" \
- \
   -d '{
-}'
+}' \
+  -H "Content-Type: application/json"
 ```
 
 
@@ -491,7 +486,7 @@ DELETE /tags/{tag_id}
 
 ```bash
 $ curl -n -X DELETE https://api.stash.com/tags/$TAG_ID \
-  -H "Content-Type: application/json" \
+  -H "Content-Type: application/json"
 ```
 
 
@@ -584,10 +579,9 @@ PATCH /tags/{tag_id}
 
 ```bash
 $ curl -n -X PATCH https://api.stash.com/tags/$TAG_ID \
-  -H "Content-Type: application/json" \
- \
   -d '{
-}'
+}' \
+  -H "Content-Type: application/json"
 ```
 
 

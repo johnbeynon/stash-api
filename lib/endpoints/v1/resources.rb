@@ -29,7 +29,7 @@ module Endpoints::V1
 
     namespace '/collections' do
 
-      post "/:collection_id/add" do
+      post "/:collection_id/resources" do
         respond_with Mediators::Resource::Creator.new(
           collection_id,
           request_body

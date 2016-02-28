@@ -73,7 +73,7 @@ links:
   rel: instances
   title: "Collection resources"
 - description: Add a new resource in a collection.
-  href: "/collections/{(%2Fschemata%2Fcollection%23%2Fdefinitions%2Fidentity)}/add"
+  href: "/collections/{(%2Fschemata%2Fcollection%23%2Fdefinitions%2Fidentity)}/resources"
   method: POST
   rel: create
   schema:
