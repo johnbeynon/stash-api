@@ -4,7 +4,7 @@ class Tag < Sequel::Model
   plugin :validation_helpers
 
   many_to_one :collection
-  one_to_many :resources
+  many_to_many :resources, left_key: :tag_id, right_key: :resource_id, left_primary_key: :uuid
 
   def validate
     super
