@@ -5,14 +5,11 @@ module Endpoints::V1
 
     namespace "/resources" do
 
-      # post do
-      #   respond_with Mediators::Link::Creator.new(
-      #     request_body
-      #   ).call, 201
-      # end
-
       get "/:id" do
-        respond_with Resource.find(uuid: params[:id])
+        raise Pliny::Errors::NotFound unless UUID_PATTERN =~ params[:id]
+        resource = Resource[params[:id]]
+        raise Pliny::Errors::NotFound unless resource
+        respond_with resource
       end
 
       patch "/:id" do
@@ -44,10 +41,6 @@ module Endpoints::V1
       end
     end
 
-    def collection_id
-      params[:collection_id]
-    end
-
     namespace '/tags' do
       get '/:tag_id/resources' do
         @tag = Tag.find(uuid: params[:tag_id])
@@ -60,6 +53,10 @@ module Endpoints::V1
 
     def serializer
       Serializers::Resource.new(:default)
+    end
+
+    def collection_id
+      params[:collection_id]
     end
 
   end
